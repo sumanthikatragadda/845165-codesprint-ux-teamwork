@@ -1,0 +1,87 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "order": [
+    {
+      "id": 1
+    },
+    {
+      "inr": 34,
+      "paisa": 66,
+      "firstname": "Siddu",
+      "lastname": "Nam",
+      "streetaddress": "none",
+      "city": "tvr",
+      "state": "Ap",
+      "country": "India",
+      "pincode": "521235",
+      "bfirstname": "A",
+      "blastname": "Q",
+      "emailid": "s@m",
+      "id": 2
+    },
+    {
+      "inr": 34,
+      "paisa": 66,
+      "firstname": "Siddu",
+      "lastname": "Nam",
+      "streetaddress": "none",
+      "city": "tvr",
+      "state": "Ap",
+      "country": "India",
+      "pincode": "521235",
+      "bfirstname": "A",
+      "blastname": "Q",
+      "emailid": "s@m",
+      "phoneno": "9987441546",
+      "id": 3
+    },
+    {
+      "inr": 12,
+      "paisa": 12,
+      "firstname": "qwwe",
+      "lastname": "asdsa",
+      "streetaddress": "sadsd",
+      "city": "wsdwd",
+      "state": "wdwd",
+      "country": "",
+      "pincode": "123333",
+      "bfirstname": "sdsd",
+      "blastname": "wsdsd",
+      "phoneno": "",
+      "emailid": "a@e",
+      "id": 5
+    },
+    {
+      "inr": 0,
+      "paisa": 0,
+      "firstname": "",
+      "lastname": "",
+      "streetaddress": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "pincode": "",
+      "bfirstname": "",
+      "blastname": "",
+      "phoneno": "",
+      "emailid": "",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

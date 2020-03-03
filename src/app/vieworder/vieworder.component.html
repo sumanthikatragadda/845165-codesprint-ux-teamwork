@@ -1,0 +1,26 @@
+<table class="table table-striped table-responsive" border="1">
+    <thead>
+        <tr>
+            <th class="h5">ID</th>
+            <th class="h5">Buyer's Name</th>
+            <th class="h5">Shipping Address</th>
+            <th class="h5">City</th>
+            <th class="h5">Amount</th>
+            <!-- <th class="h5">Phone Number</th> -->
+
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td>{{order.id}}</td>
+            <td>{{order.firstname}}.{{order.lastname}}</td>
+            <td>{{order.streetaddress}}</td>
+            <td>{{order.city}}</td>
+            <td>{{order.inr}}.{{order.paisa}}</td>
+            <!-- <td>{{order.phoneno}}</td> -->
+            <!-- <td><button class="btn btn-danger" (click)="deleteOrder(order)"> Delete</button>&nbsp;&nbsp;&nbsp;
+           <button class="btn btn-success" (click)="updateOrder(order)"> Update</button></td> -->
+        </tr>
+    </tbody>
+    </table>

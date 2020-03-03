@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style rel="stylesheet" type="text/css">
+        .bg{
+            background-image :url("../../assets/images/bgimage.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position: center;
+            height: 700px;
+            
+        }
+        .btn-primary{
+            background-color:#EF7B00;
+        }
+    </style>
+
+</head>
+<body class="bg">
+    <header >
+        <!--Logo Transparent-->
+        <div class="row">
+            <div class="col-sm-5">
+
+                <img src="../../assets/images/Logo.png" class="rounded-circle" alt="Not" style="width: 100px; height: 100px;">
+            </div>
+            <div class="col-sm-7 d-flex justify-content-start">
+
+                <img src="../../assets/images/poster.png" alt="Not" style="width:300px; height: 100px;">
+            </div>
+        </div>
+
+
+        <!--Nav-bar-->
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+
+            <div class="col" id="navbarText">
+                <ul class="nav row nav-pills ">
+
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home </a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/placeorder']" routerLinkActive="router-link-active" >Place gift card Orders</a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/vieworder']" routerLinkActive="router-link-active" >View Gift Card Orders</a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/contactus']" routerLinkActive="router-link-active" >Contact Us</a>
+                    </li>
+
+                </ul>
+                <!-- <span class="navbar-text">
+              Navbar text with an inline element
+            </span> -->
+            </div>
+
+        </nav>
+    </header>
+    <!--Side bar-->
+    <section>
+        <div class="row">
+            <aside class="col-3">
+
+                <ul class="nav flex-column">
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/placeorder']" routerLinkActive="router-link-active">Place Gift Card Orders</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/vieworder']" routerLinkActive="router-link-active">View Gift Card Orders</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/contactus']" routerLinkActive="router-link-active">Contact Us</a>
+                    </li>
+                </ul>
+
+            </aside>
+            <div class="col text-center">
+		<div class="bg">
+    <div class="container contact">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="Smiley face" >
+                    <h2>CONTACT US </h2>
+                    <h4>We would love to hear from you !</h4>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="contact-form">
+                    <form [formGroup]="contactForm" (ngSubmit)="OnSubmit()">
+                        <div class=form group>
+                            <label class="control-label col-sm-2">Firstname:</label>
+                            <input type="text" formControlName="fname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" />
+                            <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                                <div *ngIf="f.fname.errors.required">FirstName is required</div>
+                                <div *ngIf="f.fname.errors.pattern">Enter Firstname</div>
+                            </div>
+    
+                        <div class=form group>
+                            <label class="control-label col-sm-2">Lastname:</label>
+                            <input type="text" formControlName="lname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" />
+                            <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                                <div *ngIf="f.lname.errors.required">LastNameis required</div>
+                                <div *ngIf="f.lname.errors.pattern">Enter Lastname</div>
+                            </div>
+            
+                        </div>
+                        <div class=form group>
+                            <label class="control-label col-sm-2">Email:</label>
+                            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.pattern">Enter Email</div>
+                            </div>
+            
+                        </div>
+
+                        <div class = form group>
+                            <label class="control-label col-sm-2">Breif Details:</label>
+                            <textarea type="text" formControlName="comment" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.comment.errors }" ></textarea>
+                            <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
+                                <div *ngIf="f.comment.errors.required">Required Feild</div>
+                                <div *ngIf="f.comment.errors.minlength"></div>
+                            </div>
+                        </div>
+<br/>
+<br/>
+                        <div class=form group>        
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+             </div>
+
+        </div>
+    </section>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+</body>
+</html>
+

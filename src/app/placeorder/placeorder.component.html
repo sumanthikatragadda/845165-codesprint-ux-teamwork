@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style rel="stylesheet" type="text/css">
+        .bg{
+            background-image :url("../../assets/images/bgimage.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position: center;
+            height: 900px;
+            
+        }
+        .btn-primary{
+            background-color:#EF7B00;
+        }
+    </style>
+
+</head>
+<body class="bg">
+    <header >
+        <!--Logo Transparent-->
+        <div class="row">
+            <div class="col-sm-5">
+
+                <img src="../../assets/images/Logo.png" class="rounded-circle" alt="Not" style="width: 100px; height: 100px;">
+            </div>
+            <div class="col-sm-7 d-flex justify-content-start">
+
+                <img src="../../assets/images/poster.png" alt="Not" style="width:300px; height: 100px;">
+            </div>
+        </div>
+
+
+        <!--Nav-bar-->
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+
+            <div class="col" id="navbarText">
+                <ul class="nav row nav-pills ">
+
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home </a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/placeorder']" routerLinkActive="router-link-active" >Place gift card Orders</a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/vieworder']" routerLinkActive="router-link-active" >View Gift Card Orders</a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/contactus']" routerLinkActive="router-link-active" >Contact Us</a>
+                    </li>
+
+                </ul>
+                <!-- <span class="navbar-text">
+              Navbar text with an inline element
+            </span> -->
+            </div>
+
+        </nav>
+    </header>
+    <!--Side bar-->
+    <section>
+        <div class="row">
+            <aside class="col-3">
+
+                <ul class="nav flex-column">
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"  [routerLink]="['/placeorder']" routerLinkActive="router-link-active">Place Gift Card Orders</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/vieworder']" routerLinkActive="router-link-active">View Gift Card Orders</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/contactus']" routerLinkActive="router-link-active">Contact Us</a>
+                    </li>
+                </ul>
+
+            </aside>
+            <div class="col text-center">
+		<form [formGroup]="giftcardform" (ngSubmit)="onSubmit()">
+    <p style="text-align: center;color: blue;">Place gift Card Order Page:</p>
+                <table align="center">
+                    <tr>
+
+                        <td>Gift Card Amount  :   </td>
+                        <td><input type="number" formControlName="inr" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.inr.errors }" />
+                            <div *ngIf="submitted && f.inr.errors" class="invalid-feedback">
+                                <div *ngIf="f.inr.errors.required"></div>
+                            </div>INR</td>
+                        <td><input type="number" formControlName="paisa" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paisa.errors }" />
+                                <div *ngIf="submitted && f.paisa.errors" class="invalid-feedback">
+                                    <div *ngIf="f.paisa.errors.required"></div>
+                                    <div *ngIf="f.paisa.errors.pattern"></div>
+                                </div>PAISA</td>
+
+                    </tr>
+
+                    <tr>
+                        <td> Receipent Name  :</td>
+                        <td><input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstname.errors.required"></div>
+                                <div *ngIf="f.firstname.errors.pattern"></div>
+                            </div>FIRST NAME</td>
+                        <td><input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+                            <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastname.errors.required"></div>
+                                <div *ngIf="f.lastname.errors.pattern"></div>
+                            </div>LAST NAME</td>
+                    </tr>
+                </table>
+                
+
+   
+            <table align="center">      
+            <fieldset class="border border-dark">
+
+                <legend class="w-auto" style="text-align: center;">SHIPPING ADDRESS</legend>
+                <tr>
+                    
+                    <td><textarea formControlName="streetaddress" id="streetaddress" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.streetaddress.errors }" ></textarea>
+                          <div *ngIf="submitted && f.streetaddress.errors" class="invalid-feedback">
+                              <div *ngIf="f.streetaddress.errors.required"></div>
+                    </div>Street Address</td>
+                </tr>
+                    
+
+                     <tr>
+                        <td><input type="text" formControlName="city" id="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                          <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                              <div *ngIf="f.city.errors.required"></div>
+                        </div>City </td>
+                   
+
+                    
+                       <td> <input type="text" formControlName="state" id="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+                          <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                              <div *ngIf="f.state.errors.required"></div>
+                        </div> State </td>
+                    </tr>
+                
+               
+                    <tr>
+                        <td> <select id="ctry" name="Countries">
+                        <option value="India">INDIA</option>
+                        <option value="Australia">AUSTRALIA</option>
+                        <option value="US">US</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                        <div *ngIf="f.country.errors.required"></div>
+                  </div><br/> Country </td>
+                
+
+                    
+                
+                <td>  <input type="text" formControlName="pincode" id="pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" />
+                      <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                          <div *ngIf="f.pincode.errors.required"></div>
+                          <div *ngIf="f.pincode.errors.pattern"></div>
+                    </div> PinCode </td>
+                </tr>
+                
+
+            
+            </fieldset>
+           <table align="center">
+                 <tr>
+                <td>Buyers Name:</td> 
+                 <td><input type="text" formControlName="bfirstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bfirstname.errors }" />
+                      <div *ngIf="submitted && f.bfirstname.errors" class="invalid-feedback">
+                          <div *ngIf="f.bfirstname.errors.required"></div>
+                          <div *ngIf="f.bfirstname.errors.pattern"></div>
+                    </div>FIRST NAME </td>
+               
+                <td><input type="text" formControlName="blastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.blastname.errors }" />
+                        <div *ngIf="submitted && f.blastname.errors" class="invalid-feedback">
+                            <div *ngIf="f.blastname.errors.required"></div>
+                            <div *ngIf="f.blastname.errors.pattern"></div>
+                      </div>LAST NAME </td>
+             </tr> 
+           
+            <tr>
+               <td> Enter Email:</td>
+            <input type="text" style="width:300px" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }" />
+                 <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
+                    <div *ngIf="f.emailid.errors.required">Email is required</div>
+                  <div *ngIf="f.emailid.errors.email">Email must be a valid email address</div>
+                </div>
+                </tr>
+            </table>
+<br/>
+
+
+<tr>
+              
+                PHONE NUMBER : <input type="text" id="ph" value="+91" readonly="readonly" size="3" />
+                <input id="ph1" onkeypress="f()" type="text" maxlength="1" size="1" />
+                <input id="ph2" onkeypress="f1()" type="text" maxlength="1" size="1" />
+                <input id="ph3" onkeypress="f2()" type="text" maxlength="1" size="1" />
+                <input id="ph4" onkeypress="f3()" type="text" maxlength="1" size="1" />
+                <input id="ph5" onkeypress="f4()" type="text" maxlength="1" size="1" />
+                <input id="ph6" onkeypress="f5()" type="text" maxlength="1" size="1" />
+                <input id="ph7" onkeypress="f6()" type="text" maxlength="1" size="1" />
+                <input id="ph8" onkeypress="f7()" type="text" maxlength="1" size="1" />
+                <input id="ph9" onkeypress="f8()" type="text" maxlength="1" size="1" />
+                <input id="ph10" onkeypress="f9()" type="text" maxlength="1" size="1" /><br /><br />
+                <br><br>
+            
+</tr>
+
+               </table> 
+              
+                <div class="text-center form-group">
+                    <button class="btn btn-primary mr-1">PlaceOrder</button>
+                    <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+                </div>
+
+
+</form>
+  
+
+				
+	    </div>
+
+        </div>
+    </section>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+</body>
+</html>
+

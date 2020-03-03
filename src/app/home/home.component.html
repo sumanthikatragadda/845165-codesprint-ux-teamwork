@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style rel="stylesheet" type="text/css">
+        .bg{
+            background-image :url("../../assets/images/bgimage.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position: center;
+            height: 700px;
+            
+        }
+        .btn-primary{
+            background-color:#EF7B00;
+        }
+    </style>
+
+</head>
+<body class="bg">
+    <header >
+        <!--Logo Transparent-->
+        <div class="row">
+            <div class="col-sm-5">
+
+                <img src="../../assets/images/Logo.png" class="rounded-circle" alt="Not" style="width: 100px; height: 100px;">
+            </div>
+            <div class="col-sm-7 d-flex justify-content-start">
+
+                <img src="../../assets/images/poster.png" alt="Not" style="width:300px; height: 100px;">
+            </div>
+        </div>
+
+
+        <!--Nav-bar-->
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+
+            <div class="col" id="navbarText">
+                <ul class="nav row nav-pills ">
+
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home </a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/placeorder']" routerLinkActive="router-link-active" >Place gift card Orders</a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/vieworder']" routerLinkActive="router-link-active" >View Gift Card Orders</a>
+                    </li>
+                    <li class="col-sm-3 nav-item text-center">
+                        <a class="nav-link btn-primary" [routerLink]="['/contactus']" routerLinkActive="router-link-active" >Contact Us</a>
+                    </li>
+
+                </ul>
+                <!-- <span class="navbar-text">
+              Navbar text with an inline element
+            </span> -->
+            </div>
+
+        </nav>
+    </header>
+    <!--Side bar-->
+    <section>
+        <div class="row">
+            <aside class="col-3">
+
+                <ul class="nav flex-column">
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/placeorder']" routerLinkActive="router-link-active">Place Gift Card Orders</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/vieworder']" routerLinkActive="router-link-active">View Gift Card Orders</a>
+                    </li>
+                    <li class="nav-item my-2 text-center">
+                        <a class="nav-link btn-primary"[routerLink]="['/contactus']" routerLinkActive="router-link-active">Contact Us</a>
+                    </li>
+                </ul>
+
+            </aside>
+            <div class="col text-center">
+
+                <div class="content">
+                    <h1 class="display-3">Gift Card </h1>
+                    
+                    <p><strong>Gift:</strong> “More and more gift cards are being redeemed through mobile technology,” says Walsh. It’s “a lot easier to store your gift card” on your phone. </p>
+                    
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary btn-lg btn-block button"[routerLink]="['/placeorder']" routerLinkActive="router-link-active">Place Order</button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+<router-outlet></router-outlet>
+
+</body>
+</html>
+
